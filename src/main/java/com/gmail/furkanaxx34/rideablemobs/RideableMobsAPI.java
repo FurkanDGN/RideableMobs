@@ -16,6 +16,10 @@ public class RideableMobsAPI {
         if (entity instanceof Mob) {
             String name = entity.getType().name().toLowerCase(Locale.ROOT).replace('_', ' ');
             String permission = "allow.mob." + name;
+
+            if (!player.hasPermission(permission))
+                return;
+
             Mob mob = (Mob) entity;
 
             Horse horse = (Horse) player.getWorld().spawnEntity(player.getLocation(), EntityType.HORSE);
