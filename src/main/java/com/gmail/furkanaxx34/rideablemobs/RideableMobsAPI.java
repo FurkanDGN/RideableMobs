@@ -13,19 +13,20 @@ public class RideableMobsAPI {
     }
 
     public void rideMob(Player player, Entity entity) {
-        if (entity instanceof Mob) {
-            String name = entity.getType().name().toLowerCase(Locale.ROOT);
-            String permission = "allow.mob." + name;
-
-            if (!player.hasPermission(permission))
-                return;
-
-            Mob mob = (Mob) entity;
-
-            Horse horse = (Horse) player.getWorld().spawnEntity(player.getLocation(), EntityType.HORSE);
-            prepareHorse(horse, player);
-            new RideTeleportTask(horse, mob).startTask();
+        if (!(entity instanceof Mob)) {
+            return;
         }
+        String name = entity.getType().name().toLowerCase(Locale.ROOT);
+        String permission = "allow.mob." + name;
+
+        if (!player.hasPermission(permission))
+            return;
+
+        Mob mob = (Mob) entity;
+
+        Horse horse = (Horse) player.getWorld().spawnEntity(player.getLocation(), EntityType.HORSE);
+        prepareHorse(horse, player);
+        new RideTeleportTask(horse, mob).startTask();
     }
 
     private void prepareHorse(Horse horse, Player player) {
