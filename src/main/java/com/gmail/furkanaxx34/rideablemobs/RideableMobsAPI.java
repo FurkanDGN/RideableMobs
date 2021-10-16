@@ -14,7 +14,7 @@ public class RideableMobsAPI {
 
     public void rideMob(Player player, Entity entity) {
         if (entity instanceof Mob) {
-            String name = entity.getType().name().toLowerCase(Locale.ROOT).replace('_', ' ');
+            String name = entity.getType().name().toLowerCase(Locale.ROOT);
             String permission = "allow.mob." + name;
 
             if (!player.hasPermission(permission))
