@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class RideableTeleportTask {
+public class RideTeleportTask {
 
     @NotNull
     private final Horse horse;
@@ -22,7 +22,7 @@ public class RideableTeleportTask {
     @Nullable
     private BukkitTask task;
 
-    public RideableTeleportTask(@NotNull Horse horse, @NotNull Mob mob) {
+    public RideTeleportTask(@NotNull Horse horse, @NotNull Mob mob) {
         this.horse = horse;
         this.mob = mob;
     }

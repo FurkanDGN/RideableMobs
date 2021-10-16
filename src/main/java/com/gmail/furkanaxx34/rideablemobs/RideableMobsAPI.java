@@ -1,6 +1,6 @@
 package com.gmail.furkanaxx34.rideablemobs;
 
-import com.gmail.furkanaxx34.rideablemobs.task.RideableTeleportTask;
+import com.gmail.furkanaxx34.rideablemobs.task.RideTeleportTask;
 import org.bukkit.Material;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
@@ -24,7 +24,7 @@ public class RideableMobsAPI {
 
             Horse horse = (Horse) player.getWorld().spawnEntity(player.getLocation(), EntityType.HORSE);
             prepareHorse(horse, player);
-            new RideableTeleportTask(horse, mob).startTask();
+            new RideTeleportTask(horse, mob).startTask();
         }
     }
 
