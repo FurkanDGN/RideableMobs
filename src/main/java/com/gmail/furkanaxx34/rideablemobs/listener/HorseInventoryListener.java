@@ -14,7 +14,7 @@ public class HorseInventoryListener implements Listener {
         if (event.getClickedInventory() instanceof HorseInventory) {
             Entity vehicle = event.getWhoClicked().getVehicle();
             if (vehicle instanceof Horse && ((Horse) vehicle).isInvisible())
-                event.setCancelled(true);
+                event.setCancelled(true); // Prevent taking saddle from player.
         }
     }
 }
