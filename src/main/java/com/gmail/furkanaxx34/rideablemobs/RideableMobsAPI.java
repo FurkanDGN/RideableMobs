@@ -42,7 +42,7 @@ public class RideableMobsAPI {
             Class<?> entity = ReflectionUtils.getNMSClass("Entity");
             Object packet = packetPlayOutMount.getConstructor(entity).newInstance(mob.getClass().getMethod("getHandle").invoke(mob));
             ReflectionUtils.sendPacket(player, packet);
-        }catch (InvocationTargetException | InstantiationException | IllegalAccessException | ClassCastException | NoSuchMethodException e) {
+        } catch (InvocationTargetException | InstantiationException | IllegalAccessException | ClassCastException | NoSuchMethodException e) {
             e.printStackTrace();
         }
     }

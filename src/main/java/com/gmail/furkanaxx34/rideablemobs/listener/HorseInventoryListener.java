@@ -13,7 +13,7 @@ public class HorseInventoryListener implements Listener {
     public void onClick(InventoryClickEvent event) {
         if (event.getClickedInventory() instanceof HorseInventory) {
             Entity vehicle = event.getWhoClicked().getVehicle();
-            if (vehicle instanceof Horse && ((Horse)vehicle).isInvisible())
+            if (vehicle instanceof Horse && ((Horse) vehicle).isInvisible())
                 event.setCancelled(true);
         }
     }
